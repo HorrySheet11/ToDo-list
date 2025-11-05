@@ -1,3 +1,8 @@
 import './style.css';
+import './toDo.js'
 
-console.log('script loaded');
+try {
+    console.log('script loaded');
+} catch (error) {
+    console.log(error);
+}
