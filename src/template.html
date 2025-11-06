@@ -6,12 +6,40 @@
     <title>To Do List</title>
 </head>
 <body>
-    <header><h1>To Do List</h1></header>
-        <div class="toDo-list">
-            <div class="toDo-items">
-                <!-- To Do items will be dynamically added here -->
-            </div>
+    <header>
+        <h1>To Do List</h1>
+        <button id="add-toDo">+</button>
+    </header>
+    <div class="toDo-list">
+        <div class="toDo-items">
+            <h3>To Do 1</h3><input id="completed" type="checkbox" />
+            <h4>Due: 2023-01-01</h4>
+            <h4>Priority: High</h4>
+            <p>This is a sample to do item.</p>
         </div>
+    </div>
+    <dialog class="add-toDo-dialog" >
+        <form method="dialog">
+            <label for="toDo-title">Title:</label>
+            <input type="text" id="toDo-title" name="toDo-title" required />
+            <br />
+            <label for="toDo-description">Description:</label>
+            <textarea id="toDo-description" name="toDo-description" required></textarea>
+            <br />
+            <label for="toDo-dueDate">Due Date:</label>
+            <input type="date" id="toDo-dueDate" name="toDo-dueDate" required />
+            <br />
+            <label for="toDo-priority">Priority:</label>
+            <select id="toDo-priority" name="toDo-priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <br />
+            <button type="submit">Add To Do</button>
+            <button type="button" id="cancel-button">Cancel</button>
+        </form>
+    </dialog>
 </body> 
 <script type="module" src="./index.js" ></script>
 </html>
