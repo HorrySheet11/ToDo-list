@@ -31,7 +31,7 @@ header > h1 {
     font-weight: bold;
 }
 
-#add-toDo{
+#add-toDo,button{
     background-color: #ffffff;
     display:inline;
     border: none;
@@ -120,4 +120,72 @@ header > h1 {
 
 .toDo-items:has(input[type="checkbox"]:checked) {
     background-color: #f2f2f2 !important;
+}
+
+.dialog{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: left;
+    width: 80%;
+    height:auto;
+    max-height:80%;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border:none;
+    /* display: none; */
+}
+.dialog h2{
+    margin-bottom: 20px;
+    display:inline-block
+}
+
+#cancel-button{
+    display:inline-block;
+    position:absolute;
+    top:10px;
+    right:10px;
+    box-shadow: none;
+    
+}
+
+form{
+    background-color: #eeeeee;
+    padding:10px;
+    border-radius:10px;
+}
+
+form > :is(input, textarea,select){
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+select{
+    background-color: white;
+}
+
+textarea{
+    resize:vertical;
+    overflow: auto;
+}
+
+button[type='submit']{
+    border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display:block;
+    margin:auto;
+}
+
+:focus-visible{
+    outline:1px solid grey  ;
 }
