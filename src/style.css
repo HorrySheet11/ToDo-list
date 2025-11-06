@@ -65,6 +65,7 @@ header > h1 {
     overflow-y: auto;
     position:relative;
     overflow-y:hidden;
+    cursor: pointer;
 }
 
 .toDo-items:hover{
@@ -72,20 +73,28 @@ header > h1 {
     overflow-y:auto;
 }
 
-.toDo-items h3, .toDo-items h4{
+#title{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
     margin-bottom: 10px;
     font-size: 18px;
     color: #333;
-    display:inline;
+    display:inline-block;
     font-weight: bold;
 }
 
-.toDo-items h4{
+#date, #priority{
     font-size: 15px;
-    display:block;
+    display:inline-block;
 }
 
-.toDo-items p{
+#priority{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#description{
     margin-bottom: 10px;
     font-size: 16px;
     color: #666;
@@ -104,9 +113,11 @@ header > h1 {
     transform: scale(1.3);
 }
 
-#completed:checked + h3,
-#completed:checked + h4,
-#completed:checked + p{
-    text-decoration: line-through ;
-    color: #999;
-} 
+.toDo-items:has(input[type="checkbox"]:checked) * {
+    text-decoration: line-through !important;
+    color: #ccc !important;
+}
+
+.toDo-items:has(input[type="checkbox"]:checked) {
+    background-color: #f2f2f2 !important;
+}

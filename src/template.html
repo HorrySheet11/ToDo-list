@@ -12,13 +12,13 @@
     </header>
     <div class="toDo-list">
         <div class="toDo-items">
-            <h3>To Do 1</h3><input id="completed" type="checkbox" />
-            <h4>Due: 2023-01-01</h4>
-            <h4>Priority: High</h4>
-            <p>This is a sample to do item.</p>
+            <h3 id="title">To Do 1</h3><input id="completed" type="checkbox" />
+            <h4 id="date">Due: 2023-01-01</h4>
+            <h4 id="priority">Priority: High</h4>
+            <p id="description">This is a sample to do item.</p>
         </div>
     </div>
-    <dialog class="add-toDo-dialog" >
+    <dialog class="add-toDo-dialog" enabled>
         <form method="dialog">
             <label for="toDo-title">Title:</label>
             <input type="text" id="toDo-title" name="toDo-title" required />
