@@ -18,7 +18,7 @@
             <p id="description">This is a sample to do item.</p>
         </div>
     </div>
-    <dialog class="add-toDo-dialog dialog" open>
+    <dialog id="add-toDo-dialog" class="dialog">
         <h2>Add To Do</h2>
         <button type="button" id="cancel-button">x</button>
         <form method="dialog">
@@ -26,20 +26,20 @@
             <input type="text" id="toDo-title" name="toDo-title" required />
             <br />
             <label for="toDo-description">Description:</label>
-            <textarea id="toDo-description" name="toDo-description" required></textarea>
+            <textarea id="toDo-description" name="toDo-description"></textarea>
             <br />
             <label for="toDo-dueDate">Due Date:</label>
-            <input type="date" id="toDo-dueDate" name="toDo-dueDate" required />
+            <input type="date" id="toDo-dueDate" name="toDo-dueDate"/>
             <br />
             <label for="toDo-priority">Priority:</label>
-            <select id="toDo-priority" name="toDo-priority" required>
+            <select id="toDo-priority" name="toDo-priority">
                 <option value="" disabled hidden selected>Select Priority</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
             <br />
-            <button type="submit">Add To Do</button>
+            <button id="submit" type="submit">Add To Do</button>
         </form>
     </dialog>
 </body> 
