@@ -1,6 +1,7 @@
 import './style.css';
 import { ToDo } from './toDo.js'
 
+
 try {
     console.log('script loaded');
     ToDo;
@@ -8,6 +9,8 @@ try {
     console.log(error);
 }
 
+let toDoList = document.querySelector('.toDo-list');
+export default toDoList;
 const titleInput = document.getElementById('toDo-title');
 const descriptionInput = document.getElementById('toDo-description');
 const dueDateInput = document.getElementById('toDo-dueDate');
@@ -21,8 +24,8 @@ submitButton.addEventListener('click', () => {
     const dueDate = dueDateInput.value;
     const priority = priorityInput.value;
     const newTodo = new ToDo(title, description, dueDate, priority);
-    newTodo.addToDo();
-
+    toDoList.replaceWith(newTodo.addToDo());
+    
     closeDialog();
 })
 
@@ -32,3 +35,6 @@ function closeDialog() {
 }
 const addToDo = document.getElementById('add-toDo'); 
 addToDo.addEventListener('click', () => toDoDialog.showModal());
+
+const cancelButton = document.getElementById('cancel-button');
+cancelButton.addEventListener('click', closeDialog());

@@ -80,7 +80,7 @@ header > h1 {
     margin-bottom: 10px;
     font-size: 18px;
     color: #333;
-    display:inline-block;
+    display:block;
     font-weight: bold;
 }
 
