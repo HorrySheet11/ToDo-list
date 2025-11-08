@@ -32,7 +32,7 @@ export class ToDo {
         toDoItem.classList.add('small');
       }
       toDoItem.innerHTML = `
-          <h3 id="title">${toDo.title}</h3><input id="completed" type="checkbox" />
+          <h2 id="title">${toDo.title}</h2><input id="completed" type="checkbox" />
           <h4 id="date">${toDo.dueDate ? `Due: ${toDo.dueDate}` : undefined}</h4>
           <h4 id="priority">${toDo.priority ? `Priority: ${toDo.priority}` : undefined}</h4>
           <p id="description">${toDo.description ? toDo.description : undefined}</p>
