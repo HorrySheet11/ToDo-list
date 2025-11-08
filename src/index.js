@@ -19,6 +19,7 @@ const priorityInput = document.getElementById('toDo-priority');
 const toDoDialog = document.getElementById('add-toDo-dialog');
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', () => {
+    toDoList = document.querySelector('.toDo-list');
     const title = titleInput.value;
     const description = descriptionInput.value;
     const dueDate = dueDateInput.value;

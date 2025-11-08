@@ -28,16 +28,17 @@ export class ToDo {
     toDos.map((toDo) => {
       const toDoItem = document.createElement('div');
       toDoItem.classList.add('toDo-items');
+      if(!toDo.dueDate && !toDo.priority && !toDo.description){ 
+        toDoItem.classList.add('small');
+      }
       toDoItem.innerHTML = `
           <h3 id="title">${toDo.title}</h3><input id="completed" type="checkbox" />
-          <h4 id="date">Due: ${toDo.dueDate}</h4>
-          <h4 id="priority">Priority: ${toDo.priority}</h4>
-          <p id="description">${toDo.description}</p>
+          <h4 id="date">${toDo.dueDate ? `Due: ${toDo.dueDate}` : undefined}</h4>
+          <h4 id="priority">${toDo.priority ? `Priority: ${toDo.priority}` : undefined}</h4>
+          <p id="description">${toDo.description ? toDo.description : undefined}</p>
         `;
       toDoList.appendChild(toDoItem);
     });
-    console.log(toDos);
-    console.log(toDoList);
     return toDoList;
   }
 }

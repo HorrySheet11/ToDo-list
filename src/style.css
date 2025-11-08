@@ -53,19 +53,25 @@ header > h1 {
     height:100%;
     display:flex;
     flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .toDo-items{
     padding:10px;
     width:200px;
-    height: 100px;
+    height: 90px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
     position:relative;
     overflow-y:hidden;
     cursor: pointer;
+}
+
+.small{
+    height:40px;
 }
 
 .toDo-items:hover{
@@ -75,13 +81,11 @@ header > h1 {
 
 #title{
     margin-bottom: 10px;
-    font-size: 16px;
     color: #666;
-    margin-bottom: 10px;
     font-size: 18px;
     color: #333;
     display:block;
-    font-weight: bold;
+    font-weight:bolder;
 }
 
 #date, #priority{
