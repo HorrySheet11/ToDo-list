@@ -21,18 +21,18 @@
     <dialog id="add-toDo-dialog" class="dialog">
         <h2>Add To Do</h2>
         <button type="button" id="cancel-button">x</button>
-        <form method="dialog">
+        <form method="dialog" >
             <label for="toDo-title">Title:</label>
-            <input required type="text" id="toDo-title" name="toDo-title" />
+            <input required type="text" id="toDo-title" name="title" />
             <br />
             <label for="toDo-description">Description:</label>
-            <textarea id="toDo-description" name="toDo-description"></textarea>
+            <textarea id="toDo-description" name="description"></textarea>
             <br />
             <label for="toDo-dueDate">Due Date:</label>
-            <input type="date" id="toDo-dueDate" name="toDo-dueDate"/>
+            <input type="date" id="toDo-dueDate" name="dueDate"/>
             <br />
             <label for="toDo-priority">Priority:</label>
-            <select id="toDo-priority" name="toDo-priority">
+            <select id="toDo-priority" name="priority">
                 <option value="" disabled hidden selected>Select Priority</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>

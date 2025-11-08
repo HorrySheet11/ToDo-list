@@ -33,9 +33,9 @@ export class ToDo {
       }
       toDoItem.innerHTML = `
           <h2 id="title">${toDo.title}</h2><input id="completed" type="checkbox" />
-          <h4 id="date">${toDo.dueDate ? `Due: ${toDo.dueDate}` : undefined}</h4>
-          <h4 id="priority">${toDo.priority ? `Priority: ${toDo.priority}` : undefined}</h4>
-          <p id="description">${toDo.description ? toDo.description : undefined}</p>
+          <h4 id="date">${toDo.dueDate ? `Due: ${toDo.dueDate}` : ''}</h4>
+          <h4 id="priority">${toDo.priority ? `Priority: ${toDo.priority}` : ''}</h4>
+          <p id="description">${toDo.description ? toDo.description : ''}</p>
         `;
       toDoList.appendChild(toDoItem);
     });

@@ -11,29 +11,30 @@ try {
 }
 
 let toDoList = document.querySelector('.toDo-list');
-export default toDoList;
-const titleInput = document.getElementById('toDo-title');
-const descriptionInput = document.getElementById('toDo-description');
-const dueDateInput = document.getElementById('toDo-dueDate');
-const priorityInput = document.getElementById('toDo-priority');
 
 const toDoDialog = document.getElementById('add-toDo-dialog');
 const submitButton = document.getElementById('submit');
+
+const form = document.querySelector('form');
+const inputValues = {};
+const inputs = document.querySelectorAll('input[name="title"], input[name="dueDate"], textarea[name="description"], select[name="priority"]');
 submitButton.addEventListener('click', () => {
+    event.preventDefault;
     toDoList = document.querySelector('.toDo-list');
-    const title = titleInput.value;
-    const description = descriptionInput.value;
-    const dueDate = dueDateInput.value;
-    const priority = priorityInput.value;
-    const newTodo = new ToDo(title, description, dueDate, priority);
+    inputs.forEach((input) => {
+        inputValues[input.name] = input.value;
+    });
+    if (inputValues['title'] == ''){
+        return;
+    }
+    const newTodo = new ToDo(inputValues.title, inputValues.description, inputValues.dueDate, inputValues.priority);
     toDoList.replaceWith(newTodo.addToDo());
-    
     closeDialog();
 })
 
 function closeDialog() {
     toDoDialog.close();
-    titleInput.value = descriptionInput.value = dueDateInput.value = priorityInput.value = '';
+    form.reset();
 }
 const addToDo = document.getElementById('add-toDo'); 
 addToDo.addEventListener('click', () => toDoDialog.showModal());

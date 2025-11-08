@@ -141,7 +141,7 @@ header > h1 {
     z-index: 1001;
     border:none;
     overflow-y: auto;
-    /* display: none; */
+    overflow-x: hidden;
 }
 .dialog h2{
     margin-bottom: 20px;
@@ -161,6 +161,7 @@ form{
     background-color: #f3f3f3;
     padding:10px;
     border-radius:10px;
+    pointer-events: auto;
     :is(input, textarea,select){
         width: 100%;
         padding: 10px;
@@ -182,7 +183,7 @@ textarea{
     overflow: auto;
 }
 
-button[type='button']{
+button[type='submit']{
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     display:block;
