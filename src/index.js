@@ -37,4 +37,4 @@ const addToDo = document.getElementById('add-toDo');
 addToDo.addEventListener('click', () => toDoDialog.showModal());
 
 const cancelButton = document.getElementById('cancel-button');
-cancelButton.addEventListener('click', closeDialog());
+cancelButton.addEventListener('click',() => closeDialog());
