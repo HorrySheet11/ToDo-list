@@ -61,7 +61,7 @@ header > h1 {
 .toDo-items{
     padding:10px;
     width:200px;
-    height: 90px;
+    height: 100px;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -161,17 +161,17 @@ form{
     background-color: #f3f3f3;
     padding:10px;
     border-radius:10px;
+    :is(input, textarea,select){
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 }
 
-form > :is(input, textarea,select){
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 select{
     background-color: white;
@@ -182,9 +182,9 @@ textarea{
     overflow: auto;
 }
 
-button[type='submit']{
+button[type='button']{
     border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     display:block;
     margin:auto;
 }
