@@ -9,16 +9,23 @@ try {
   console.log(error);
 }
 
-let body = document.body;
 let toDoList = document.querySelector(".toDo-list");
 
 function openToDoItem() {
   toDoList.addEventListener("click", function (event) {
-  const clickedElement = event.target.closest(".toDo-items");
-  clickedElement.classList.toggle("open");
-  editToDoItem();
-  console.log(clickedElement);
-  // console.log(toDoList.children[toDoList.children.indexOf(clickedElement)].children[1]);
+    // const clickedElement = event.target.closest(".toDo-items");
+    // make clickedElement the specific clicked div
+    console.log(event.target);
+    const clickedElement = event.target;
+    clickedElement.classList.toggle("open");
+    editToDoItem();
+    // console.log(clickedElement);
+    // //get index of clicked element div
+    // console.log(toDoList.children)
+    // const element = document.querySelector(".open");
+    // var parent = element.parentNode;
+    // console.log(Array.prototype.indexOf.call(parent.children, element))
+    
 });}
 openToDoItem();
 // function openToDoItem() {
@@ -30,7 +37,7 @@ openToDoItem();
 //   });
 // })}
 document.querySelector('#editToDoBtn').addEventListener('click', () => {
-  applyEdit();
+  const values = applyEdit();
 })
 
 const toDoDialog = document.getElementById("add-toDo-dialog");
@@ -61,6 +68,7 @@ document.getElementById("submit").addEventListener("click", () => {
 
 function closeDialog() {
   toDoDialog.close();
+  document.querySelector('#editDialog').close();
   document.querySelector("form").reset();
 }
 const addToDo = document.getElementById("add-toDo");

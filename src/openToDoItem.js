@@ -32,6 +32,7 @@ export function editToDoItem() {
       }
     
   });
+
 }
 
 export function applyEdit() {
@@ -50,4 +51,5 @@ export function applyEdit() {
   
   // Close the dialog
   editDialog.close();
+  return{title, description, dueDate, priority};
 }
