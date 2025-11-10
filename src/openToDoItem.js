@@ -62,5 +62,5 @@ export function applyEdit() {
     dueDate: dueDate,
     priority: priority,
   }
-  // overwriteToDos(itemIndex,itemObject);
+  overwriteToDos(itemIndex,itemObject);
 }

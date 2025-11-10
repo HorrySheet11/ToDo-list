@@ -1,4 +1,4 @@
-
+import {saveToDos} from './webStorage.js';
 export let toDos = [];
 
 export class ToDo {
@@ -13,10 +13,11 @@ export class ToDo {
   toggleCompleted() {
     this.completed = !this.completed;
   }
-
+ 
   addToDo() {
     const newToDo = new ToDo(this.title, this.description, this.dueDate, this.priority);
     toDos.push(newToDo);
+    saveToDos();
     return this.addToDOM();
   }
 

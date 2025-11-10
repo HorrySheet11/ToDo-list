@@ -1,22 +1,13 @@
 import "./style.css";
 import { ToDo } from "./toDo.js";
 import { editToDoItem, applyEdit } from "./openToDoItem.js";
+import {loadToDos} from './webStorage.js';
 
 let toDoList = document.querySelector(".toDo-list");
 
-// function openToDoItem() {
-//   toDoList.addEventListener("click", function (event) {
-//     // make the clickedElement the only item clicked
-
-//     const clickedElement = event.target.closest(".toDo-items");
-//     // console.log(thisIndex(clickedElement));
-//     // console.log(event.target);
-//     clickedElement.classList.toggle("open");
-//     editToDoItem();
-//   });
-// }
 function openToDoItem() {
   toDoList.addEventListener("click", function (event) {
+    event.preventDefault;
     const clickedElement = event.target.closest(".toDo-items");
     if (clickedElement) {
       // Remove the 'open' class from all other items
@@ -28,6 +19,13 @@ function openToDoItem() {
     }
   });
 }
+
+window.addEventListener("load", (event) => {
+  loadToDos();
+  toDoList.replaceWith(new ToDo().addToDOM());
+  toDoList = document.querySelector(".toDo-list");
+  openToDoItem();
+} );
 
 openToDoItem();
 document.querySelector("#editToDoBtn").addEventListener("click", () => {
