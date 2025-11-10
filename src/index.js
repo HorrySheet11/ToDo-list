@@ -4,13 +4,28 @@ import { editToDoItem, applyEdit } from "./openToDoItem.js";
 
 let toDoList = document.querySelector(".toDo-list");
 
+// function openToDoItem() {
+//   toDoList.addEventListener("click", function (event) {
+//     // make the clickedElement the only item clicked
+
+//     const clickedElement = event.target.closest(".toDo-items");
+//     // console.log(thisIndex(clickedElement));
+//     // console.log(event.target);
+//     clickedElement.classList.toggle("open");
+//     editToDoItem();
+//   });
+// }
 function openToDoItem() {
   toDoList.addEventListener("click", function (event) {
     const clickedElement = event.target.closest(".toDo-items");
-    console.log(thisIndex(clickedElement));
-    console.log(event.target);
-    clickedElement.classList.toggle("open");
-    editToDoItem();
+    if (clickedElement) {
+      // Remove the 'open' class from all other items
+      const allItems = document.querySelectorAll(".toDo-items");
+      allItems.forEach(item => item.classList.remove("open"));
+      // Add the 'open' class to the clicked item
+      clickedElement.classList.add("open");
+      editToDoItem(thisIndex(clickedElement));
+    }
   });
 }
 

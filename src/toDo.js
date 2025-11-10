@@ -17,7 +17,6 @@ export class ToDo {
   addToDo() {
     const newToDo = new ToDo(this.title, this.description, this.dueDate, this.priority);
     toDos.push(newToDo);
-    // this.addToDOM();
     return this.addToDOM();
   }
 

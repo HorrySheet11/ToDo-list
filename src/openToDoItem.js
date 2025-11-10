@@ -31,8 +31,6 @@ export function editToDoItem(index) {
         editDialog.querySelector('#editPriority').value = priority.replace('Priority: ', '');
 
         editDialog.showModal();
-      } else {
-        item.classList.toggle('open');
       }
     
   });
@@ -64,5 +62,5 @@ export function applyEdit() {
     dueDate: dueDate,
     priority: priority,
   }
-  overwriteToDos(itemIndex,itemObject);
+  // overwriteToDos(itemIndex,itemObject);
 }
