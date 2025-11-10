@@ -1,5 +1,5 @@
 
-let toDos = [];
+export let toDos = [];
 
 export class ToDo {
   constructor(title, description, dueDate, priority) {

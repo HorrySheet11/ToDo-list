@@ -1,15 +1,19 @@
-// function openToDoItem() {
-//   console.log('openToDoItem loaded');
-//     const toDoItems = document.querySelectorAll('.toDo-items');
-//     toDoItems.forEach(item => {
-//         item.addEventListener('click', () => {
-//             item.classList.toggle('open');
-//             editToDoItem();
-//         });
-//     });
-// }
+import {toDos} from './toDo.js';
 
-export function editToDoItem() {
+let itemIndex = 0;
+let itemObject = {};
+
+function overwriteToDos(index,object){
+  toDos[index].title = object.title;
+  toDos[index].description = object.description;
+  toDos[index].dueDate = object.dueDate;
+  toDos[index].priority = object.priority;  
+  console.log(toDos);
+  
+}
+
+export function editToDoItem(index) {
+  itemIndex = index;
   const toDoItems = document.querySelectorAll('.toDo-items');
   toDoItems.forEach(item => {
       if (item.classList.contains('open')) {
@@ -32,7 +36,6 @@ export function editToDoItem() {
       }
     
   });
-
 }
 
 export function applyEdit() {
@@ -42,14 +45,24 @@ export function applyEdit() {
   const dueDate = editDialog.querySelector('#editDueDate').value;
   const priority = editDialog.querySelector('#editPriority').value;
   
-  // Update the toDo item with the new details
-  const toDoItem = editDialog.closest('.toDo-items');
+
+  const toDoItem = document.querySelector('.open');
+  if(description || dueDate || priority){
+    toDoItem.classList.remove('small');
+  }else if(!description && !dueDate && !priority){
+    toDoItem.classList.add('small');
+  }
+  console.log(toDoItem);
   toDoItem.querySelector('#title').textContent = title;
   toDoItem.querySelector('#description').textContent = description;
-  toDoItem.querySelector('#date').textContent = dueDate;
-  toDoItem.querySelector('#priority').textContent = priority;
-  
-  // Close the dialog
-  editDialog.close();
-  return{title, description, dueDate, priority};
+  toDoItem.querySelector('#date').textContent = `Due: ${dueDate}`;
+  toDoItem.querySelector('#priority').textContent = `Priority: ${priority}`;
+
+  itemObject = {
+    title: title,
+    description: description,
+    dueDate: dueDate,
+    priority: priority,
+  }
+  overwriteToDos(itemIndex,itemObject);
 }
