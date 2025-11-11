@@ -12,7 +12,7 @@ function openToDoItem() {
 		if (clickedElement) {
 			// Remove the 'open' class from all other items
 			const allItems = document.querySelectorAll(".toDo-items");
-			allItems.forEach((item) => item.classList.remove("open"));
+			allItems.forEach((item) => { item.classList.remove("open"); });
 			// Add the 'open' class to the clicked item
 			clickedElement.classList.add("open");
 			editToDoItem(thisIndex(clickedElement));
