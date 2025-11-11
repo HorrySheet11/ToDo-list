@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/HorrySheet11/ToDo-list#readme",
   "devDependencies": {
+    "@biomejs/biome": "2.3.4",
     "css-loader": "^7.1.2",
+    "globals": "^16.5.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.4",
     "style-loader": "^4.0.0",
